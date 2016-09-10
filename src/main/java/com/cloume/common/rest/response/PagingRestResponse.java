@@ -45,7 +45,7 @@ public class PagingRestResponse<LT> extends RestResponse<Collection<LT>> {
 	 * @return
 	 */
 	public static <T> PagingRestResponse<T> good(Collection<T> result){
-		return good(result, result.size());
+		return good(result, result == null ? 0 : result.size());
 	}
 	
 	public PagingRestResponse<LT> setPaging(Object next, int count){
